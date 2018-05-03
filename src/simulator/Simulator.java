@@ -56,7 +56,6 @@ public class Simulator {
             }
 
             if (stress) {
-
                 if ((cpuLoad > 0.0 && cpuLoad <= 1.0) && (memoryLoad > 0.0 && memoryLoad <= 1.0)) {
                     // Memory stress 
                     // It depends on JVM memory allocation. On tests I could
@@ -80,9 +79,9 @@ public class Simulator {
                             Thread.sleep((long) Math.floor((1 - cpuLoad) * 100));
                         }
                     }
-                } else {
-                    Thread.sleep((long) (duration * 1000)); // Convert to milliseconds
                 }
+            } else {
+                Thread.sleep((long) (duration * 1000)); // Convert to milliseconds
             }
 
             JSONObject outputObject = new JSONObject();
